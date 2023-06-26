@@ -1,0 +1,164 @@
+@charset "UTF-8";									/*Defines the type of character encoding used in this CSS document to 8-bit Unicode*/
+
+html, body {										/*Targets the base of the website*/
+	max-width: 100%;								/*Prevents the page from ever horizontally stretching, as this is undesired and aesthetically unpleasing*/
+	overflow-x: hidden;								/*Disables the horizontal scrollbar from appearing, as the website is not intended to stretch horizontally*/
+	height: 100%;									/*Defines the height of the whole page, so child elements may inherit this value when using percentage scaling*/
+	margin: 0;
+}
+
+* {													/*Targets every element*/
+	margin: 0;										/*Removes default margins put in place by the browser due to the !DOCTYPE tag in the HTML file. Allows for content to stretch to the edge of the screen*/
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+	background-color: #eee;
+}
+
+a {													/*Targets all links*/
+	text-decoration: none;							/*Removes the default underline rendered by web browser programs*/
+}
+
+p a {												/*Targets links within paragraph elements*/		
+	color: #2882ff;
+	font-weight: bold;
+	transition: all 0.1s;							/*Enables smooth transitions between all property changes within 0.1s*/
+}
+
+a:hover {											/*Targets links within paragraph elements with the mouse hovering over them*/
+	color: #004767;
+	transition: all 0.1s;
+}
+
+#headercollage {									/*Targets the division element with an ID of 'headerollage'*/
+	height: 7.4vw;									/*Sets the division's height to a dynamic value that matches the width of the browser window*/
+	position: relative;
+	background-image: url("img/headergrey.jpg");	/*Nuclear Dawn by InterWave Studios – interwavestudios.com (archive: https://web.archive.org/web/20121003115044/http://www.interwavestudios.com/) [CC BY-SA 3.0: https://web.archive.org/web/20121003115044/http://www.interwavestudios.com/], via Wikimedia Commons (https://commons.wikimedia.org/). Nuclear Dawn - Gate FPS 01.jpg (https://commons.wikimedia.org/wiki/File:Nuclear_Dawn_-_Gate_FPS_01.jpg), Nuclear Dawn - Clocktower FPS 03.png(https://commons.wikimedia.org/wiki/File:Nuclear_Dawn_-_Clocktower_FPS_03.png), Nuclear Dawn - Clocktower FPS 01.png (https://commons.wikimedia.org/wiki/File:Nuclear_Dawn_-_Clocktower_FPS_01.png), Nuclear Dawn - Clocktower Environment 01.png (https://commons.wikimedia.org/wiki/File:Nuclear_Dawn_-_Clocktower_Environment_01.png). Size, crop and colour have been modified for all images used. Display size is determined by the browser window size; dimensions: 1920x100; size: 125KB; DPI: 96.*/
+	background-size: cover;							/*Forces the background image to fill the division without any gaps*/
+	background-repeat: repeat-x;					/*Allows the background image to only repeat along the x-axis, allowing the image to infinitely scroll along the axis for the following animation*/
+	animation: collagescroll 60s infinite;			/*Declares a CSS animation named 'collagescroll' that lasts for a minute and loops forever*/
+	animation-timing-function: linear;				/*Declares the movement type of the animation to linear; moves in a straight line with consistent speed*/
+}
+
+@keyframes collagescroll {							/*Defines the keyframes for the CSS animation named 'collagescroll'*/
+	0% {background-position: 0px;}					/*At the start of the animation (0%), the background's position is where it started*/
+	100% {background-position: 1920px;}				/*At the end of the animation (100%), the background's position moves left of its width (1920 pixels) to form a loop*/
+}
+
+#leftbar {
+	width: 300px;
+	text-align: center;
+	/*padding: 50px 10px 50px 10px;*/
+	height: 100%;
+	overflow-y: hidden;
+	background-color: #eee;
+	box-shadow: 15px 0px 10px gray;
+	float: left;
+	position: absolute;
+}
+
+#contact {
+	position: absolute;
+	bottom: 10px;
+	width: inherit;
+}
+
+#contact ul {
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#contact li {
+	display: block;
+	flex: 0 1 auto;
+	list-style-type: none;
+	padding: 20px;
+}
+
+#portraitImage {
+	border-radius: 100%;
+	width: 50%;
+	margin-top: 20px;
+}
+
+.icbutton {
+	transition: all 0.1s;
+	color: black;
+}
+
+.icbutton:hover {
+	transition: all 0.1s;
+	color: #2882ff;
+}
+
+#exlinks {
+	margin-top: 20px;
+	padding-left: 0px;
+	text-align: left;
+}
+
+#exlinks li {
+	list-style-type: none;
+	padding: 10px;
+}
+
+.postContainer {
+	margin: 50px 400px 50px 400px;
+	height: 100%;
+}
+
+.post {
+	background-color: #ddd;
+	padding: 10px;
+	width: 50%;
+	border-radius: 20px;
+	box-shadow: 0px 0px 10px gray;
+	margin-bottom: 20px;
+}
+
+.post hr {
+	border: 1px solid #2882ff;
+}
+
+.post img {
+	margin-top: 10px;
+	width: 100%;
+}
+
+.post h1 {
+
+}
+
+.post h2 {
+
+}
+
+.post h3 {
+	text-align: right;
+	position: absolute;
+	width: 880px;
+	margin-top: -30px;
+	font-size: 15px;
+	color: gray;
+	font-style: italic;
+	font-weight: 500;
+}
+
+#leftbar p {
+	text-align: left;
+	padding: 10px 20px 20px 20px;
+}
+
+#leftbar hr {
+	border: 1px solid #2882ff;
+	margin: 10px;
+}
+
+#leftbar h2 {
+	color: #2882ff;
+}
