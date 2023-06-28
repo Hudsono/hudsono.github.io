@@ -13,7 +13,7 @@ html, body {										/*Targets the base of the website*/
 }
 
 body {
-	background-color: #eee;
+	background: rgb(2,0,36);
 }
 
 a {													/*Targets all links*/
@@ -52,10 +52,29 @@ a:hover {											/*Targets links within paragraph elements with the mouse hov
 	/*padding: 50px 10px 50px 10px;*/
 	height: 100%;
 	overflow-y: hidden;
-	background-color: #eee;
-	box-shadow: 15px 0px 10px gray;
+	box-shadow: 15px 0px 10px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
+	color: white;
+	backdrop-filter: blur(10px);
+
+	background: rgb(21,24,27);
+	background: -moz-linear-gradient(0deg, rgba(21,24,27,0.38557429807860644) 0%, rgba(42,47,61,0.8505602924763656) 82%, rgba(57,64,83,0.8477591720281863) 100%);
+	background: -webkit-linear-gradient(0deg, rgba(21,24,27,0.38557429807860644) 0%, rgba(42,47,61,0.8505602924763656) 82%, rgba(57,64,83,0.8477591720281863) 100%);
+	background: linear-gradient(0deg, rgba(21,24,27,0.38557429807860644) 0%, rgba(42,47,61,0.8505602924763656) 82%, rgba(57,64,83,0.8477591720281863) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#15181b",endColorstr="#394053",GradientType=1);
+
+	animation-name: fadeleft;
+	animation-duration: 2s;
+}
+
+@keyframes fadeleft {
+	0% {
+		margin-left: -500px;
+	}
+	100% {
+		margin-left: 0px;
+	}
 }
 
 #contact {
@@ -84,11 +103,53 @@ a:hover {											/*Targets links within paragraph elements with the mouse hov
 	border-radius: 100%;
 	width: 50%;
 	margin-top: 20px;
+	animation-name: twiddle;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+
+	transition: all 0.5s;
+	transition-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+@keyframes twiddle {
+	0% {
+		transform: rotate(-3deg);
+	}
+	100% {
+		transform: rotate(3deg);
+	}
+}
+
+#portraitImage:hover {
+	width: 40%;
+	margin-top: 10%;
+	margin-bottom: 6.8%;
+	filter: brightness(80%);
+
+	transition: all 0.5s;
+	transition-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+#portraitImage:active {
+	animation-name: testing;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+
+@keyframes testing {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 .icbutton {
 	transition: all 0.1s;
-	color: black;
+	color: white;
 }
 
 .icbutton:hover {
@@ -108,17 +169,40 @@ a:hover {											/*Targets links within paragraph elements with the mouse hov
 }
 
 .postContainer {
-	margin: 50px 400px 50px 400px;
+	margin: 3% 0% 10% 35%;
 	height: 100%;
 }
 
 .post {
-	background-color: #ddd;
-	padding: 10px;
-	width: 50%;
+	background-color: rgba(60, 60, 60, 0.4);
+	color: #ededed;
+	padding: 25px;
 	border-radius: 20px;
-	box-shadow: 0px 0px 10px gray;
+	/*box-shadow: 0px 0px 10px gray;*/
+	backdrop-filter: blur(5px);
+}
+
+.postBorder {
 	margin-bottom: 20px;
+	width: 50%;
+	border-top: 20px solid transparent;
+	border-right: 10px solid transparent;
+	border-image: url(img/rainborder.gif) 15 round;
+	background-origin: content-box;
+
+	animation-name: fadeabove;
+	animation-duration: 2s;
+}
+
+@keyframes fadeabove {
+	0% {
+		margin-top: -20px;
+		opacity: 0;
+	}
+	100% {
+		margin-top: 0px;
+		opacity: 1;
+	}
 }
 
 .post hr {
@@ -138,10 +222,13 @@ a:hover {											/*Targets links within paragraph elements with the mouse hov
 
 }
 
+.post p {
+	padding: 0px 0px 10px 0px;
+}
+
 .post h3 {
 	text-align: right;
-	position: absolute;
-	width: 880px;
+	width: 100%;
 	margin-top: -30px;
 	font-size: 15px;
 	color: gray;
@@ -161,4 +248,89 @@ a:hover {											/*Targets links within paragraph elements with the mouse hov
 
 #leftbar h2 {
 	color: #2882ff;
+}
+
+.bg-graphic {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+
+#earl {
+	background: rgb(55,49,72);
+	background: -moz-linear-gradient(0deg, rgba(55,49,72,1) 0%, rgba(15,48,69,1) 34%, rgba(15,48,69,1) 100%);
+	background: -webkit-linear-gradient(0deg, rgba(55,49,72,1) 0%, rgba(15,48,69,1) 34%, rgba(15,48,69,1) 100%);
+	background: linear-gradient(0deg, rgba(55,49,72,1) 0%, rgba(15,48,69,1) 34%, rgba(15,48,69,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#373148",endColorstr="#0f3045",GradientType=1);
+
+	opacity: 1;
+}
+
+#rise {
+	background: rgb(217,143,125);
+	background: -moz-linear-gradient(0deg, rgba(217,143,125,1) 0%, rgba(252,196,176,1) 18%, rgba(190,198,207,1) 36%, rgba(151,199,226,1) 68%, rgba(198,218,220,1) 100%);
+	background: -webkit-linear-gradient(0deg, rgba(217,143,125,1) 0%, rgba(252,196,176,1) 18%, rgba(190,198,207,1) 36%, rgba(151,199,226,1) 68%, rgba(198,218,220,1) 100%);
+	background: linear-gradient(0deg, rgba(217,143,125,1) 0%, rgba(252,196,176,1) 18%, rgba(190,198,207,1) 36%, rgba(151,199,226,1) 68%, rgba(198,218,220,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d98f7d",endColorstr="#c6dadc",GradientType=1);
+
+	opacity: 0;
+}
+
+#noon {
+	background: rgb(143,187,215);
+	background: -moz-linear-gradient(0deg, rgba(143,187,215,1) 0%, rgba(148,198,227,1) 40%, rgba(74,132,169,1) 100%);
+	background: -webkit-linear-gradient(0deg, rgba(143,187,215,1) 0%, rgba(148,198,227,1) 40%, rgba(74,132,169,1) 100%);
+	background: linear-gradient(0deg, rgba(143,187,215,1) 0%, rgba(148,198,227,1) 40%, rgba(74,132,169,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8fbbd7",endColorstr="#4a84a9",GradientType=1);
+
+	opacity: 0;
+}
+
+#late {
+	background: rgb(166,96,90);
+	background: -moz-linear-gradient(0deg, rgba(166,96,90,1) 0%, rgba(249,162,109,1) 40%, rgba(108,110,141,1) 100%);
+	background: -webkit-linear-gradient(0deg, rgba(166,96,90,1) 0%, rgba(249,162,109,1) 40%, rgba(108,110,141,1) 100%);
+	background: linear-gradient(0deg, rgba(166,96,90,1) 0%, rgba(249,162,109,1) 40%, rgba(108,110,141,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a6605a",endColorstr="#6c6e8d",GradientType=1);
+
+	opacity: 0;
+}
+
+#dark {
+	background: rgb(55,49,72);
+	background: -moz-linear-gradient(0deg, rgba(55,49,72,1) 0%, rgba(15,48,69,1) 34%, rgba(15,48,69,1) 100%);
+	background: -webkit-linear-gradient(0deg, rgba(55,49,72,1) 0%, rgba(15,48,69,1) 34%, rgba(15,48,69,1) 100%);
+	background: linear-gradient(0deg, rgba(55,49,72,1) 0%, rgba(15,48,69,1) 34%, rgba(15,48,69,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#373148",endColorstr="#0f3045",GradientType=1);
+
+	opacity: 0;
+}
+
+#rain, #rain2, #rain3 {
+	background: url("img/rain.png");
+	filter: grayscale(100%);
+}
+
+#rain {
+	opacity: 0.4;
+	background-size: 640px;
+}
+
+#rain2 {
+	opacity: 0.6;
+	background-size: 500px;
+}
+
+#rain3 {
+	opacity: 0.7;
+	background-size: 900px;
+}
+
+#storm {
+	background: url("img/storm.png");
+	opacity: 1;
+	filter: brightness(20%);
+	background-size: cover; 
 }
