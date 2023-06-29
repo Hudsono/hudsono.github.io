@@ -12,7 +12,7 @@
 	<meta name="language" content="en-AU" />
 	<meta name="type" content="text" />
 	<meta charset="UTF-8" />			<!--Metadata specifying the character encoding used in this HTML document to be 8-bit Unicode.-->
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">	<!--Legacy CDN via Bootstrap for now.-->
+	<script src="https://kit.fontawesome.com/ec8a50c8ae.js" crossorigin="anonymous"></script>
 	<script src="js/site.js" defer></script>	<!--Execute script only after the page has loaded.-->
 	<title>
 		Hudson Douglas
@@ -66,6 +66,42 @@
 			</ul>
 		</div>
 	</div>
+	<div id="weatherTimeWidget">
+		<p id="clock">00:00</p>
+		<p id="weatherStatus"></p>
+		<p id="weatherThanks"><a href="https://open-meteo.com/">Open-Meteo</a></p>
+		<!--
+		<form action="myservlet.do" method="post">
+			<select name="timezoneselect" id="timezoneselect" onchange="this.form.submit()">
+				<option value="utc-12">UTC-12</option>
+				<option value="utc-11">UTC-11</option>
+				<option value="utc-10">UTC-10</option>
+				<option value="utc-9">UTC-9</option>
+				<option value="utc-8">UTC-9</option>
+				<option value="utc-7">UTC-7</option>
+				<option value="utc-6">UTC-6</option>
+				<option value="utc-5">UTC-5</option>
+				<option value="utc-4">UTC-4</option>
+				<option value="utc-3">UTC-3</option>
+				<option value="utc-2">UTC-2</option>
+				<option value="utc-1">UTC-1</option>
+				<option value="utc+0">UTC+0</option>
+				<option value="utc+1">UTC+1</option>
+				<option value="utc+2">UTC+2</option>
+				<option value="utc+3">UTC+3</option>
+				<option value="utc+4">UTC+4</option>
+				<option value="utc+5">UTC+5</option>
+				<option value="utc+6">UTC+6</option>
+				<option value="utc+7">UTC+7</option>
+				<option value="utc+8">UTC+8</option>
+				<option value="utc+9">UTC+9</option>
+				<option value="utc+10">UTC+10</option>
+				<option value="utc+11">UTC+11</option>
+				<option value="utc+12">UTC+12</option>
+			</select>
+		</form>
+		-->
+	</div>
 	<div class="postContainer">
 		<div class="postBorder">
 			<div class="post">
@@ -93,10 +129,13 @@
 				<hr />
 				<img src="img/AI-Light1.gif" />
 				<p>
+					(Above is a non-playable demo.)
+				</p>
+				<p>
 					A demonstration program containing two variations of AI-controlled players versus the player (you!) in an enclosed environment lit up by a custom light rendering system.
 				</p>
 				<p>
-					You control the player agent--the white triangle. You must avoid the guard agents from detecting you--the other triangles.
+					You are tasked with controlling the white triangle to take the key item--the white orb--and leave into the red square, avoiding the guard triangles searching for you.
 				</p>
 				<p>
 					The colour of guard agents determines their current AI state:
@@ -107,9 +146,6 @@
 						<li>Red: Attack behaviour.</li>
 						<li>Green: Bathroom Break behaviour.</li>
 					</ul>
-				</p>
-				<p>
-					The goal of these game demonstrations is to collect the white ball (the key item) and deliver it to the level's exit (the green box, originally red).
 				</p>
 				<p>
 					One guard is controlled by a Finite State Machine instance, using the Dijkstra algorithm for path finding. Another guard is controlled by a Utility AI instance, using the A* algorithm and euclidean heuristic for path finding. This guard is signified by a pink dot on top of it, and has the tendency to use the bathroom when needs be, appearing green while doing so.
@@ -123,6 +159,9 @@
 				<h2>C++ Real-Time Interactive Game</h2>
 				<hr />
 				<img src="img/Arkanoid2.gif" />
+				<p>
+					(Above is a non-playable demo.)
+				</p>
 				<p>
 					An arcade classic re-creation of Taito's 1986 Arkanoid.
 				</p>

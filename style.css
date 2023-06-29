@@ -171,6 +171,7 @@ a:hover {											/*Targets links within paragraph elements with the mouse hov
 .postContainer {
 	margin: 3% 0% 10% 35%;
 	height: 100%;
+	width: 50%;
 }
 
 .post {
@@ -184,9 +185,9 @@ a:hover {											/*Targets links within paragraph elements with the mouse hov
 
 .postBorder {
 	margin-bottom: 20px;
-	width: 50%;
-	border-top: 20px solid transparent;
-	border-right: 10px solid transparent;
+	width: 830px;
+	border-top: 0px solid transparent;
+	border-right: 0px solid transparent;
 	border-image: url(img/rainborder.gif) 15 round;
 	background-origin: content-box;
 
@@ -314,23 +315,64 @@ a:hover {											/*Targets links within paragraph elements with the mouse hov
 }
 
 #rain {
-	opacity: 0.4;
+	opacity: 0;
 	background-size: 640px;
 }
 
 #rain2 {
-	opacity: 0.6;
+	opacity: 0;
 	background-size: 500px;
+
 }
 
 #rain3 {
-	opacity: 0.7;
+	opacity: 0;
 	background-size: 900px;
+}
+
+@keyframes rainAnim3 {
+	0% {
+		background-position-x: 0;
+		background-position-y: 0;
+	}
+	100% {
+		background-position-x: -48px;
+		background-position-y: 64px;
+	}
+
 }
 
 #storm {
 	background: url("img/storm.png");
-	opacity: 1;
+	opacity: 0;
 	filter: brightness(20%);
 	background-size: cover; 
+}
+
+#weatherTimeWidget {
+	position: absolute;
+	width: 20%;
+	right: 100px;
+	top: 100px;
+
+	animation-name: fadeabove;
+	animation-duration: 5s;
+}
+
+#clock {
+	font-size: 30px;
+	color: white;
+	font-weight: bold;
+}
+
+#weatherStatus {
+	font-size: 20px;
+	color: lightgray;
+	font-style: italic;
+
+}
+
+#weatherThanks {
+	font-size: 10px;
+	color: gray;
 }
