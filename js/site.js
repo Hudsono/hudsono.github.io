@@ -19,7 +19,7 @@ function changeTimezone(date, ianatz) {
 var here = new Date();
 var there = changeTimezone(here, "Australia/Sydney");
 
-console.log(`Here:    ${here.toString()}\nToronto: ${there.toString()}`);
+//console.log(`Here:    ${here.toString()}\nToronto: ${there.toString()}`);
 
 
 // Fire off tick() once on load to initialise.
