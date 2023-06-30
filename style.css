@@ -232,7 +232,7 @@ a:hover {											/*Targets links within paragraph elements with the mouse hov
 	width: 100%;
 	margin-top: -30px;
 	font-size: 15px;
-	color: gray;
+	color: lightgray;
 	font-style: italic;
 	font-weight: 500;
 }
@@ -354,9 +354,9 @@ a:hover {											/*Targets links within paragraph elements with the mouse hov
 	width: 20%;
 	right: 100px;
 	top: 100px;
-
 	animation-name: fadeabove;
 	animation-duration: 5s;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 #clock {
@@ -369,6 +369,7 @@ a:hover {											/*Targets links within paragraph elements with the mouse hov
 	font-size: 20px;
 	color: lightgray;
 	font-style: italic;
+
 
 }
 
