@@ -352,7 +352,7 @@ a:hover {											/*Targets links within paragraph elements with the mouse hov
 #weatherTimeWidget {
 	position: absolute;
 	width: 20%;
-	right: 100px;
+	right: 0;
 	top: 100px;
 	animation-name: fadeabove;
 	animation-duration: 5s;
