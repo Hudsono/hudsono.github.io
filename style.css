@@ -259,16 +259,20 @@ a:hover {											/*Targets links within paragraph elements with the mouse hov
 }
 
 
+/* Early gradient. */
 #earl {
+	/* Maximum gradient compatibility. */
 	background: rgb(55,49,72);
 	background: -moz-linear-gradient(0deg, rgba(55,49,72,1) 0%, rgba(15,48,69,1) 34%, rgba(15,48,69,1) 100%);
 	background: -webkit-linear-gradient(0deg, rgba(55,49,72,1) 0%, rgba(15,48,69,1) 34%, rgba(15,48,69,1) 100%);
 	background: linear-gradient(0deg, rgba(55,49,72,1) 0%, rgba(15,48,69,1) 34%, rgba(15,48,69,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#373148",endColorstr="#0f3045",GradientType=1);
 
+	/* Only make one of these gradients visible before JS initialises. */
 	opacity: 1;
 }
 
+/* Sunrise gradient. */
 #rise {
 	background: rgb(217,143,125);
 	background: -moz-linear-gradient(0deg, rgba(217,143,125,1) 0%, rgba(252,196,176,1) 18%, rgba(190,198,207,1) 36%, rgba(151,199,226,1) 68%, rgba(198,218,220,1) 100%);
@@ -279,6 +283,7 @@ a:hover {											/*Targets links within paragraph elements with the mouse hov
 	opacity: 0;
 }
 
+/* Noon gradient. */
 #noon {
 	background: rgb(143,187,215);
 	background: -moz-linear-gradient(0deg, rgba(143,187,215,1) 0%, rgba(148,198,227,1) 40%, rgba(74,132,169,1) 100%);
@@ -289,6 +294,7 @@ a:hover {											/*Targets links within paragraph elements with the mouse hov
 	opacity: 0;
 }
 
+/* Afternoon gradient. */
 #late {
 	background: rgb(166,96,90);
 	background: -moz-linear-gradient(0deg, rgba(166,96,90,1) 0%, rgba(249,162,109,1) 40%, rgba(108,110,141,1) 100%);
@@ -299,6 +305,7 @@ a:hover {											/*Targets links within paragraph elements with the mouse hov
 	opacity: 0;
 }
 
+/* Night gradient. */
 #dark {
 	background: rgb(55,49,72);
 	background: -moz-linear-gradient(0deg, rgba(55,49,72,1) 0%, rgba(15,48,69,1) 34%, rgba(15,48,69,1) 100%);
