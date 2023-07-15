@@ -51,6 +51,9 @@
 				</a>
 			</ul>
 		</div>
+		<a href="https://www.goldenkey.org/" target="_blank">
+			<img id="gk-banner" src="img/gk-banner.png" />
+		</a>
 		<div id="contact">
 			<ul>
 				<a href="mailto:00hdouglas@gmail.com" class="icbutton">
@@ -72,41 +75,46 @@
 		<p id="clock">00:00</p>
 		<p id="weatherStatus"></p>
 		<p id="weatherThanks"><a href="https://open-meteo.com/">Open-Meteo</a></p>
-		<!--
-		<form action="myservlet.do" method="post">
-			<select name="timezoneselect" id="timezoneselect" onchange="this.form.submit()">
-				<option value="utc-12">UTC-12</option>
-				<option value="utc-11">UTC-11</option>
-				<option value="utc-10">UTC-10</option>
-				<option value="utc-9">UTC-9</option>
-				<option value="utc-8">UTC-9</option>
-				<option value="utc-7">UTC-7</option>
-				<option value="utc-6">UTC-6</option>
-				<option value="utc-5">UTC-5</option>
-				<option value="utc-4">UTC-4</option>
-				<option value="utc-3">UTC-3</option>
-				<option value="utc-2">UTC-2</option>
-				<option value="utc-1">UTC-1</option>
-				<option value="utc+0">UTC+0</option>
-				<option value="utc+1">UTC+1</option>
-				<option value="utc+2">UTC+2</option>
-				<option value="utc+3">UTC+3</option>
-				<option value="utc+4">UTC+4</option>
-				<option value="utc+5">UTC+5</option>
-				<option value="utc+6">UTC+6</option>
-				<option value="utc+7">UTC+7</option>
-				<option value="utc+8">UTC+8</option>
-				<option value="utc+9">UTC+9</option>
-				<option value="utc+10">UTC+10</option>
-				<option value="utc+11">UTC+11</option>
-				<option value="utc+12">UTC+12</option>
-			</select>
-		</form>
-		-->
 	</div>
 	<div class="postContainer">
 		<div class="postBorder">
 			<div class="post">
+				<div class="buttonRow">
+					<input checked="true" autocomplete="off" type="checkbox" id="cs-button" onclick="FilterPosts('cat-cs', this)" />
+					<label for="cs-button">C#/.NET</label>
+					<!--<button onclick="FilterPosts('cat-cs')" id="cs-button">C#/.NET</button>-->
+					<input checked="true" autocomplete="off" type="checkbox" id="cpp-button" onclick="FilterPosts('cat-cpp', this)" />
+					<label for="cpp-button">C++</label>
+					<!--<button onclick="FilterPosts('cat-cpp')" id="cpp-button">C++</button>-->
+					<input checked="true" autocomplete="off" type="checkbox" id="java-button" onclick="FilterPosts('java-cpp', this)" />
+					<label for="java-button">Java</label>
+					<!--<button onclick="FilterPosts('cat-java')" id="java-button">Java</button>-->
+					<input checked="true" autocomplete="off" type="checkbox" id="python-button" onclick="FilterPosts('python-cpp', this)" />
+					<label for="python-button">Python</label>
+					<!--<button onclick="FilterPosts('cat-python')" id="python-button">Python</button>-->
+					<input checked="true" autocomplete="off" type="checkbox" id="js-button" onclick="FilterPosts('js-cpp', this)" />
+					<label for="js-button">JavaScript</label>
+					<!--<button onclick="FilterPosts('cat-js')" id="js-button">JavaScript</button>-->
+					<input checked="true" autocomplete="off" type="checkbox" id="web-button" onclick="FilterPosts('cat-web', this)" />
+					<label for="web-button">HTML/CSS</label>
+					<!--<button onclick="FilterPosts('cat-web')" id="web-button">HTML/CSS</button>-->
+					<input checked="true" autocomplete="off" type="checkbox" id="unity-button" onclick="FilterPosts('unity-cpp', this)" />
+					<label for="unity-button">Unity</label>
+					<!--<button onclick="FilterPosts('cat-unity')" id="unity-button">Unity</button>-->
+					<input checked="true" autocomplete="off" type="checkbox" id="opengl-button" onclick="FilterPosts('opengl-cpp', this)" />
+					<label for="opengl-button">OpenGL</label>
+					<!--<button onclick="FilterPosts('cat-opengl')" id="opengl-button">OpenGL</button>-->
+					<input checked="true" autocomplete="off" type="checkbox" id="vr-button" onclick="FilterPosts('vr-cpp', this)" />
+					<label for="vr-button">VR</label>
+					<!--<button onclick="FilterPosts('cat-vr')" id="vr-button">VR</button>-->
+					<input checked="true" autocomplete="off" type="checkbox" id="misc-button" onclick="FilterPosts('misc-cpp', this)" />
+					<label for="misc-button">Misc</label>
+					<!--<button onclick="FilterPosts('cat-misc')" id="misc-button">Misc.</button>-->
+				</div>
+			</div>
+		</div>
+		<div class="postBorder">
+			<div class="post cat-web">
 				<h1>Front-End Web Development Project</h1>
 				<h3>Aug 2021 - Nov 2021</h3>
 				<h2>KDDart / University of Canberra, Internship | Bruce, ACT</h2>
@@ -124,7 +132,7 @@
 			</div>
 		</div>
 		<div class="postBorder">
-			<div class="post">
+			<div class="post cat-cpp">
 				<h1>AI & Light</h1>
 				<h3>May 2022</h3>
 				<h2>C++ Real-Time Interactive Game</h2>
@@ -155,7 +163,7 @@
 			</div>
 		</div>
 		<div class="postBorder">
-			<div class="post">
+			<div class="post cat-cpp">
 				<h1>ArkaNot</h1>
 				<h3>May 2022</h3>
 				<h2>C++ Real-Time Interactive Game</h2>

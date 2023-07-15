@@ -139,6 +139,7 @@ async function logJSONData() {
     ParseWeatherCode(weatherCode, jsonData.current_weather.windspeed);
 }
 
+// TODO: UN-COMMENT!
 logJSONData();
 
 
@@ -341,6 +342,11 @@ function ParseWeatherCode(weatherCode, inWindSpeed) {
     // Update the text.
     document.getElementById("weatherStatus").innerHTML = weatherStatus + " " + flavourSuffix;
 
+    // Set entry animations here once the status is set.
+    // Better here than normally in CSS, as here we're fetching remote resources and must wait. Looks better.
+    document.getElementById("weatherStatus").style.animation = "textkernin 1s ease-in-out 0s 1 forwards";
+    document.getElementById("weatherThanks").style.animation = "textkernin 1s ease-in-out 2s 1 forwards";
+
     // Update visual fluff.
     var skyBrightness = ((timeOfDay) / 12);
     if (timeOfDay > 12)
@@ -349,8 +355,10 @@ function ParseWeatherCode(weatherCode, inWindSpeed) {
     skyBrightness += 0.2;
     skyBrightness *= 100;
 
-    document.getElementById("storm").style.filter = "brightness(" + skyBrightness + "%)";
-    document.getElementById("storm").style.opacity = cloudiness;
+    cloudsElement = document.getElementById("storm");
+    cloudsElement.style.filter = "brightness(" + skyBrightness + "%)";
+    cloudsElement.style.opacity = cloudiness;
+    cloudsElement.style.animation = "fadein 5s ease-in-out 0s 1 forwards";
     document.getElementById("rain").style.opacity = rainAmount - 0.4;
     document.getElementById("rain2").style.opacity = rainAmount - 0.4;
     document.getElementById("rain3").style.opacity = rainAmount - 0.3;
@@ -378,3 +386,64 @@ function UpdateRain(dt) {
     document.getElementById("rain3").style.backgroundPositionY = (rainProgressY * 1.2) + "px";
     document.getElementById("rain3").style.backgroundPositionX = (rainProgressX * 1.5) + "px";
 }
+
+
+// POST FILTERING.
+let posts = document.getElementsByClassName("post");
+
+// Hide/show a post given a category and if that category's checkbox is ticked or not.
+function FilterPosts(category, checkbox) {
+    // Go through each post to evaluate whether we should hide it or not.
+    for (let i = 1; i < posts.length; i++) {
+
+        // Check if this post matches the category given before doing anything.
+        if (posts[i].className.substr(posts[i].className.indexOf(' ') + 1) == category) {
+
+            // If the given checkbox is checked, see if the post is hidden and play a Show animation. If not, leave it as-is.
+            // Otherwise, hide the post if the checkbox is unchecked.
+            if (checkbox.checked) {
+                if (posts[i].parentElement.style.animationName == "hide")
+                    posts[i].parentElement.style.animation = "show 0.5s ease-in-out 0s 1 forwards";
+            }
+            else {
+                posts[i].parentElement.style.animation = "hide 0.5s ease-in-out 0s 1 forwards";
+            }
+        }
+    }
+}
+
+// REMOVE UNUSED BUTTONS.
+
+function FilterButtons() {
+    let buttons = document.querySelectorAll('.buttonRow input[type="checkbox"] + label');
+    // Go through each button to find a matching post.
+    for (let i = 0; i < buttons.length; i++) {
+        // Extract category prefix of the button.
+        //let buttonCategory = buttons[i].id.substr(0, buttons[i].id.indexOf('-'));
+        let buttonCategory = buttons[i].getAttribute("for").substr(0, buttons[i].getAttribute("for").indexOf('-'));
+
+        // Record if a match was found.
+        let categoryMatch = false;
+
+        // Test against each post for just one match.
+        for (let j = 1; j < posts.length; j++) {
+            // Extract category suffix of the post.
+            let postCategory = posts[j].className.substr(posts[j].className.indexOf('-') + 1);  
+
+            // Check if they're the same.
+            if (buttonCategory == postCategory) {
+                categoryMatch = true;
+                break;  // Exit early if there's a match.
+            }
+        }
+
+        // If not one matching post was found, hide the button.
+        if (!categoryMatch) {
+            buttons[i].style.display = "none";
+            //buttons[i].click();   // Un-checks the checkbox as they're on by default.
+        }
+    }
+}
+
+FilterButtons();
+

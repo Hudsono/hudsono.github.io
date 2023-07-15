@@ -181,6 +181,8 @@ a:hover {											/*Targets links within paragraph elements with the mouse hov
 	border-radius: 20px;
 	/*box-shadow: 0px 0px 10px gray;*/
 	backdrop-filter: blur(5px);
+
+	transition: all 5s;
 }
 
 .postBorder {
@@ -204,6 +206,58 @@ a:hover {											/*Targets links within paragraph elements with the mouse hov
 		margin-top: 0px;
 		opacity: 1;
 	}
+}
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes textkernin {
+	0% {
+		opacity: 0;
+		letter-spacing: -5px;
+	}
+
+	100% {
+		opacity: 1;
+		letter-spacing: normal;
+	}
+}
+
+@keyframes hide {
+	0% {
+		opacity: 1;
+		max-height: 200%;
+	}
+	100% {
+		opacity: 0;
+		max-height: 0%;
+	}
+}
+
+@keyframes show {
+	0% {
+		opacity: 0;
+		max-height: 0%;
+	}
+	100% {
+		opacity: 1;
+		max-height: 200%;
+	}
+}
+
+.shown-element {
+	animation: show 0.5s ease-in-out 0s 1 forwards;
+}
+
+.hidden-element {
+	animation: hide 0.5s ease-in-out 0s 1 forwards;
 }
 
 .post hr {
@@ -381,6 +435,150 @@ a:hover {											/*Targets links within paragraph elements with the mouse hov
 }
 
 #weatherThanks {
+	opacity: 0;
 	font-size: 10px;
 	color: gray;
+}
+
+.buttonRow {
+	text-align: center;
+}
+
+.buttonRow input[type="checkbox"]:not(:checked),
+.buttonRow input[type="checkbox"]:checked {
+	display: none;
+}
+
+.buttonRow input[type="checkbox"] + label {
+	display: inline-block;
+	border-radius: 100px;
+	padding: 5px 10px 5px 10px;
+	font-weight: bold;
+	font-size: 16px;
+	color: white;
+	border: 1px solid white;
+	background-color: rgba(0, 0, 0, 0);
+	cursor: pointer;
+	user-select: none;
+	transition: all 0.1s;
+}
+
+.buttonRow input[type="checkbox"]:checked:hover + label {
+	filter: brightness(130%);
+}
+
+.buttonRow input[type="checkbox"]:checked:active + label {
+	filter: brightness(180%);
+}
+
+.buttonRow input[type="checkbox"]:not(:checked):hover + label {
+	filter: brightness(70%);
+}
+
+.buttonRow input[type="checkbox"]:not(:checked):active + label {
+	filter: brightness(20%);
+}
+
+.buttonRow input[type="checkbox"]:checked + label {
+	border: 1px solid rgba(0, 0, 0, 0);
+}
+
+input[type="checkbox"]:checked + label[for="cs-button"] {
+	background: rgb(155,79,150) border-box;
+	background: -moz-linear-gradient(90deg, rgba(155,79,150,1) 0%, rgba(104,33,122,1) 100%) border-box;
+	background: -webkit-linear-gradient(90deg, rgba(155,79,150,1) 0%, rgba(104,33,122,1) 100%) border-box;
+	background: linear-gradient(90deg, rgba(155,79,150,1) 0%, rgba(104,33,122,1) 120%) border-box;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9b4f96",endColorstr="#68217a",GradientType=1);
+}
+
+input[type="checkbox"]:checked + label[for="cpp-button"] {
+	background: rgb(101,155,210) border-box;
+	background: -moz-linear-gradient(90deg, rgba(101,155,210,1) 0%, rgba(0,68,128,1) 100%) border-box;
+	background: -webkit-linear-gradient(90deg, rgba(101,155,210,1) 0%, rgba(0,68,128,1) 100%) border-box;
+	background: linear-gradient(90deg, rgba(101,155,210,1) 0%, rgba(0,68,128,1) 100%) border-box;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#659bd2",endColorstr="#004480",GradientType=1);
+}
+
+input[type="checkbox"]:checked + label[for="java-button"] {
+	background: rgb(248,153,23) border-box;
+	background: -moz-linear-gradient(90deg, rgba(248,153,23,1) 0%, rgba(247,65,22,1) 100%) border-box;
+	background: -webkit-linear-gradient(90deg, rgba(248,153,23,1) 0%, rgba(247,65,22,1) 100%) border-box;
+	background: linear-gradient(90deg, rgba(248,153,23,1) 0%, rgba(247,65,22,1) 100%) border-box;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f89917",endColorstr="#f74116",GradientType=1);
+}
+
+input[type="checkbox"]:checked + label[for="js-button"] {
+	background: rgb(247,224,24) border-box;
+	background: -moz-linear-gradient(90deg, rgba(247,224,24,1) 0%, rgba(247,175,24,1) 100%) border-box;
+	background: -webkit-linear-gradient(90deg, rgba(247,224,24,1) 0%, rgba(247,175,24,1) 100%) border-box;
+	background: linear-gradient(90deg, rgba(247,224,24,1) 0%, rgba(247,175,24,1) 100%) border-box;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f7e018",endColorstr="#f7af18",GradientType=1);
+
+	color: black;
+}
+
+input[type="checkbox"]:checked + label[for="python-button"] {
+	background: rgb(48,112,159) border-box;
+	background: -moz-linear-gradient(90deg, rgba(48,112,159,1) 0%, rgba(31,59,107,1) 100%) border-box;
+	background: -webkit-linear-gradient(90deg, rgba(48,112,159,1) 0%, rgba(31,59,107,1) 100%) border-box;
+	background: linear-gradient(90deg, rgba(48,112,159,1) 0%, rgba(31,59,107,1) 100%) border-box;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#30709f",endColorstr="#1f3b6b",GradientType=1);
+}
+
+input[type="checkbox"]:checked + label[for="web-button"] {
+	background: rgb(251,144,53) border-box;
+	background: -moz-linear-gradient(90deg, rgba(251,144,53,1) 0%, rgba(221,75,37,1) 100%) border-box;
+	background: -webkit-linear-gradient(90deg, rgba(251,144,53,1) 0%, rgba(221,75,37,1) 100%) border-box;
+	background: linear-gradient(90deg, rgba(251,144,53,1) 0%, rgba(221,75,37,1) 100%) border-box;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fb9035",endColorstr="#dd4b25",GradientType=1);
+}
+
+input[type="checkbox"]:checked + label[for="unity-button"] {
+	background: rgb(255,255,255) border-box;
+	background: -moz-linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(209,209,209,1) 100%) border-box;
+	background: -webkit-linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(209,209,209,1) 100%) border-box;
+	background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(209,209,209,1) 100%) border-box;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#d1d1d1",GradientType=1);
+
+	color: black;
+}
+
+input[type="checkbox"]:checked + label[for="opengl-button"] {
+	background: rgb(67,134,181) border-box;
+	background: -moz-linear-gradient(90deg, rgba(67,134,181,1) 0%, rgba(67,107,181,1) 100%) border-box;
+	background: -webkit-linear-gradient(90deg, rgba(67,134,181,1) 0%, rgba(67,107,181,1) 100%) border-box;
+	background: linear-gradient(90deg, rgba(67,134,181,1) 0%, rgba(67,107,181,1) 100%) border-box;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4386b5",endColorstr="#436bb5",GradientType=1);
+}
+
+input[type="checkbox"]:checked + label[for="vr-button"] {
+	background: rgb(148,34,209) border-box;
+	background: -moz-linear-gradient(90deg, rgba(148,34,209,1) 0%, rgba(20,14,174,1) 100%) border-box;
+	background: -webkit-linear-gradient(90deg, rgba(148,34,209,1) 0%, rgba(20,14,174,1) 100%) border-box;
+	background: linear-gradient(90deg, rgba(148,34,209,1) 0%, rgba(20,14,174,1) 100%) border-box;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9422d1",endColorstr="#140eae",GradientType=1);
+}
+
+input[type="checkbox"]:checked + label[for="misc-button"] {
+	background: rgb(221,221,221) border-box;
+	background: -moz-linear-gradient(90deg, rgba(221,221,221,1) 0%, rgba(180,180,180,1) 100%) border-box;
+	background: -webkit-linear-gradient(90deg, rgba(221,221,221,1) 0%, rgba(180,180,180,1) 100%) border-box;
+	background: linear-gradient(90deg, rgba(221,221,221,1) 0%, rgba(180,180,180,1) 100%) border-box;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#dddddd",endColorstr="#b4b4b4",GradientType=1);
+
+	color: black;
+}
+
+#gk-banner {
+	margin-top: 0;
+	width: 80%;
+	transition: all 0.1s;
+}
+
+#gk-banner:hover {
+	opacity: 0.5;
+}
+
+#gk-banner:active {
+	opacity: 0.3;
 }
