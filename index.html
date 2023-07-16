@@ -86,31 +86,52 @@
 					<input checked="true" autocomplete="off" type="checkbox" id="cpp-button" onclick="FilterPosts('cat-cpp', this)" />
 					<label for="cpp-button">C++</label>
 					<!--<button onclick="FilterPosts('cat-cpp')" id="cpp-button">C++</button>-->
-					<input checked="true" autocomplete="off" type="checkbox" id="java-button" onclick="FilterPosts('java-cpp', this)" />
+					<input checked="true" autocomplete="off" type="checkbox" id="java-button" onclick="FilterPosts('cat-java', this)" />
 					<label for="java-button">Java</label>
 					<!--<button onclick="FilterPosts('cat-java')" id="java-button">Java</button>-->
-					<input checked="true" autocomplete="off" type="checkbox" id="python-button" onclick="FilterPosts('python-cpp', this)" />
+					<input checked="true" autocomplete="off" type="checkbox" id="python-button" onclick="FilterPosts('cat-python', this)" />
 					<label for="python-button">Python</label>
 					<!--<button onclick="FilterPosts('cat-python')" id="python-button">Python</button>-->
-					<input checked="true" autocomplete="off" type="checkbox" id="js-button" onclick="FilterPosts('js-cpp', this)" />
+					<input checked="true" autocomplete="off" type="checkbox" id="js-button" onclick="FilterPosts('cat-js', this)" />
 					<label for="js-button">JavaScript</label>
 					<!--<button onclick="FilterPosts('cat-js')" id="js-button">JavaScript</button>-->
 					<input checked="true" autocomplete="off" type="checkbox" id="web-button" onclick="FilterPosts('cat-web', this)" />
 					<label for="web-button">HTML/CSS</label>
 					<!--<button onclick="FilterPosts('cat-web')" id="web-button">HTML/CSS</button>-->
-					<input checked="true" autocomplete="off" type="checkbox" id="unity-button" onclick="FilterPosts('unity-cpp', this)" />
+					<input checked="true" autocomplete="off" type="checkbox" id="unity-button" onclick="FilterPosts('cat-unity', this)" />
 					<label for="unity-button">Unity</label>
 					<!--<button onclick="FilterPosts('cat-unity')" id="unity-button">Unity</button>-->
-					<input checked="true" autocomplete="off" type="checkbox" id="opengl-button" onclick="FilterPosts('opengl-cpp', this)" />
+					<input checked="true" autocomplete="off" type="checkbox" id="opengl-button" onclick="FilterPosts('cat-opengl', this)" />
 					<label for="opengl-button">OpenGL</label>
 					<!--<button onclick="FilterPosts('cat-opengl')" id="opengl-button">OpenGL</button>-->
-					<input checked="true" autocomplete="off" type="checkbox" id="vr-button" onclick="FilterPosts('vr-cpp', this)" />
+					<input checked="true" autocomplete="off" type="checkbox" id="vr-button" onclick="FilterPosts('cat-vr', this)" />
 					<label for="vr-button">VR</label>
 					<!--<button onclick="FilterPosts('cat-vr')" id="vr-button">VR</button>-->
-					<input checked="true" autocomplete="off" type="checkbox" id="misc-button" onclick="FilterPosts('misc-cpp', this)" />
+					<input checked="true" autocomplete="off" type="checkbox" id="misc-button" onclick="FilterPosts('cat-misc', this)" />
 					<label for="misc-button">Misc</label>
 					<!--<button onclick="FilterPosts('cat-misc')" id="misc-button">Misc.</button>-->
 				</div>
+			</div>
+		</div>
+		<div class="postBorder">
+			<div class="post cat-vr">
+				<h1>Sliding Puzzle</h1>
+				<h3>June 2023 - Ongoing</h3>
+				<h2>C# Unity VR Feature</h2>
+				<hr />
+				<img src="img/vrpuzzle.jpg" />
+				<p>
+					A classic, configurable sliding puzzle developed to be interacted with in virtual reality. Made in Unity as part of a work-in-progress collaborative project title.
+				</p>
+				<p>
+					The feature was implemented with VR interactivity first and foremost; the player must intuitively grab and drag sliding blocks into the vacant spot. This is accomplished via Unity's Rigidbody physics system to avoid redundant code and wasted time while also allowing for direct compatibility with the OpenXR system currently implemented, as it works by picking up Rigidbody objects.
+				</p>
+				<p>
+					The implementation focuses on being friendly to configure for non-programmers; the feature makes heavy use of Unity's Inspector feature, providing an accessible user interface within the editor to change any parameters.
+				</p>
+				<p>
+					The current implementation is flexible enough to allow designers and artists to assign their own images to the blocks, in what order the blocks may start in, the puzzle's grid size and the correct order of which an external "Win" function can also be assigned via the Inspector.
+				</p>
 			</div>
 		</div>
 		<div class="postBorder">
